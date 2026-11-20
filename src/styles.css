@@ -123,3 +123,25 @@ img.socialIcon {
   height: 30px;
   width: 30px;
 }
+
+/* Pulse img.socialIcon repeatedly on hover, but only if the user hasn't requested reduced motion. 
+Leave other images unchanged. */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  img.socialIcon:hover {
+    animation: pulse 1s infinite;
+  }
+}
+
+
